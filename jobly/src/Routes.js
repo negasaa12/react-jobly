@@ -1,11 +1,14 @@
 import React from "react";
 
 import { Route, Routes, NavLink , useNavigate} from "react-router-dom";
-import JobDetails from "./JobDetails";
+import JobList from "./JobList";
 import HomePage from "./Home";
 import Companies from "./CompanyDetails";
 import CompanyList from "./CompanyList";
 import CompanyDetails from "./CompanyDetails";
+
+
+
 const RoutePaths = ()=>{
 
 
@@ -48,7 +51,7 @@ const RoutePaths = ()=>{
    </nav>
        <Routes>
             <Route exact path="/" element={<HomePage/>}> </Route>
-            <Route exact path="/jobs" element={<JobDetails/>}> </Route>
+            <Route exact path="/jobs" element={<JobList/>}> </Route>
             <Route exact path="/companies" element={<CompanyList/>}> </Route>
             <Route exact path="/companies/:handle" element={<CompanyDetails/>}> </Route>
             <Route exact path="/login" > </Route>
