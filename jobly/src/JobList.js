@@ -24,7 +24,7 @@ const JobList = ()=>{
         setJobs(jobs);
       }
 
-
+      if (!jobs) return <h1> No Jobs</h1>;
       
     return(
 

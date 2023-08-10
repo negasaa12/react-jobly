@@ -6,10 +6,10 @@ import HomePage from "./Home";
 import Companies from "./CompanyDetails";
 import CompanyList from "./CompanyList";
 import CompanyDetails from "./CompanyDetails";
+import LoginForm from "./LoginForm";
+import SignupForm from "./SignupForm";
 
-
-
-const RoutePaths = ()=>{
+const RoutePaths = ({signup})=>{
 
 
 
@@ -54,8 +54,8 @@ const RoutePaths = ()=>{
             <Route exact path="/jobs" element={<JobList/>}> </Route>
             <Route exact path="/companies" element={<CompanyList/>}> </Route>
             <Route exact path="/companies/:handle" element={<CompanyDetails/>}> </Route>
-            <Route exact path="/login" > </Route>
-            <Route exact path="/signup" > </Route>
+            <Route exact path="/login" element={<LoginForm/>} > </Route>
+            <Route exact path="/signup" element={<SignupForm signup={signup}/>} > </Route>
        </Routes>
 
         </>
