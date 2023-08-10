@@ -9,7 +9,7 @@ import CompanyDetails from "./CompanyDetails";
 import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
 
-const RoutePaths = ({signup})=>{
+const RoutePaths = ({signup, login})=>{
 
 
 
@@ -46,6 +46,11 @@ const RoutePaths = ({signup})=>{
           Login
          </NavLink>
        </li>
+       <li className="nav-li">
+         <NavLink  className="nav-NavLink" to="/profile" activeClassName="active">
+          Profile
+         </NavLink>
+       </li>
 
      </ul>
    </nav>
@@ -54,8 +59,9 @@ const RoutePaths = ({signup})=>{
             <Route exact path="/jobs" element={<JobList/>}> </Route>
             <Route exact path="/companies" element={<CompanyList/>}> </Route>
             <Route exact path="/companies/:handle" element={<CompanyDetails/>}> </Route>
-            <Route exact path="/login" element={<LoginForm/>} > </Route>
+            <Route exact path="/login" element={<LoginForm login={login}/>} > </Route>
             <Route exact path="/signup" element={<SignupForm signup={signup}/>} > </Route>
+            <Route exact path="/profile"  > </Route>
        </Routes>
 
         </>

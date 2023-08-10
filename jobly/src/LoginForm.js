@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 
-const LoginForm =()=>{
+const LoginForm =({login})=>{
 
 
     
@@ -14,6 +14,7 @@ const LoginForm =()=>{
     })
     const navigate = useNavigate();
    
+    const [errors,setErrors]= useState([]);
 
     function handleChange(evt) {
         const { name, value } = evt.target;
@@ -21,15 +22,23 @@ const LoginForm =()=>{
       }
 
     
-      function handleSubmit(evt){
-            evt.preventDefault();
-            
-      }
-
+  async function handleSubmit(evt) {
+    evt.preventDefault();
+    let result = await login(formData);
+    if (result.success) {
+      navigate("/profile")
+    } else {
+      setErrors(result.errors);
+    }
+  }
+      
+      
+    
+        console.log(formData);
     return(
         <>
-        <form>
-            <placeholder> Username</placeholder>
+        <form onSubmit={handleSubmit}>
+            <labe>Username</labe>
             <input
             type="text"
             name="username"
@@ -38,8 +47,17 @@ const LoginForm =()=>{
             
             
             />
+               <labe>Password</labe>
+            <input
+            type="text"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            
+            
+            />
 
-
+            <button onSubmit={handleSubmit}>login</button>
         </form>
         
         </>
