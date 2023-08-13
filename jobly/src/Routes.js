@@ -8,6 +8,7 @@ import CompanyList from "./CompanyList";
 import CompanyDetails from "./CompanyDetails";
 import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
+import ProfileForm from "./Profile";
 
 const RoutePaths = ({signup, login})=>{
 
@@ -61,7 +62,7 @@ const RoutePaths = ({signup, login})=>{
             <Route exact path="/companies/:handle" element={<CompanyDetails/>}> </Route>
             <Route exact path="/login" element={<LoginForm login={login}/>} > </Route>
             <Route exact path="/signup" element={<SignupForm signup={signup}/>} > </Route>
-            <Route exact path="/profile"  > </Route>
+            <Route exact path="/profile" element={<ProfileForm/>} > </Route>
        </Routes>
 
         </>
